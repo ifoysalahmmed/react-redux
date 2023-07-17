@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { incrementCounter } from "../services/actions/CounterAction";
 
 const Counter = () => {
+  const count = useSelector((state) => state.count);
+  const dispatch = useDispatch();
+
   const handleIncrement = () => {
-    //
+    dispatch(incrementCounter());
   };
 
   return (
     <div>
       <h2>Counter App</h2>
-      <h3>Count : 0</h3>
+      <h3>Count : {count}</h3>
       <button onClick={handleIncrement}>Increment</button>
     </div>
   );
@@ -28,4 +33,6 @@ export default Counter;
  * reducers -> decrement: count => count - 1
  * reducers -> reset: count => 0
  * store
+ * providing store in react
+ * use store
  */
