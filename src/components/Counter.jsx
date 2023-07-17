@@ -14,12 +14,12 @@ const Counter = () => {
     dispatch(incrementCounter());
   };
 
-  const handleDecrement = () => {
-    dispatch(decrementCounter());
-  };
-
   const handleReset = () => {
     dispatch(resetCounter());
+  };
+
+  const handleDecrement = () => {
+    dispatch(decrementCounter());
   };
 
   return (
@@ -27,8 +27,8 @@ const Counter = () => {
       <h2>Counter App</h2>
       <h3>Count : {count}</h3>
       <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
       <button onClick={handleReset}>Reset</button>
+      <button onClick={handleDecrement}>Decrement</button>
     </div>
   );
 };
